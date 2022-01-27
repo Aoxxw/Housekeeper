@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HouseKeeper</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.google.com/share?selection.family=Monoton:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+        var sldr = $('.sldr'),
+        sldrContent = sldr.html(),
+        slideWidth = $('.sl_ctr').outerWidth(),
+        slideCount = $('.sldr img').length,
+        prv_b = $('.prv_b'),
+        nxt_b = $('.nxt_b'),
+        sldrInterval = 6000,
+        animateTime = 1000,
+        course = 1,
+        margin = - slideWidth;
+        $('.sldr img:last').clone().prependTo('.sldr');$('.sldr img').eq(1).clone().appendTo('.sldr');$('.sldr').css('margin-left',-slideWidth);function nxt_bSlide(){interval=window.setInterval(animate,sldrInterval)}function animate(){if(margin==-slideCount*slideWidth-slideWidth){sldr.css({'marginLeft':-slideWidth});margin=-slideWidth*2}else if(margin==0&&course==-1){sldr.css({'marginLeft':-slideWidth*slideCount});margin=-slideWidth*slideCount+slideWidth}else{margin=margin-slideWidth*(course)}sldr.animate({'marginLeft':margin},animateTime)}function sldrStop(){window.clearInterval(interval)}prv_b.click(function(){if(sldr.is(':animated')){return false}var course2=course;course=-1;animate();course=course2});nxt_b.click(function(){if(sldr.is(':animated')){return false}var course2=course;course=1;animate();course=course2});sldr.add(nxt_b).add(prv_b).hover(function(){sldrStop()},nxt_bSlide);nxt_bSlide()});
+    </script>
+
+</head>
+<body>
+    <a href="#" title="Вернуться к началу" class="topbutton">🠕</a>
+
+    <div class="smallbody">
+        <div class="headd">
+            <div class="icon"></div>
+
+            <header class="header">   
+                <nav class="navigation"> 
+                    <ul class="main-menu">
+                        <li><a href="#about">О проекте</a></li>
+                        <li><a href="#tar">Тарифы</a></li>
+                        <li><a href="#feed">Обратная связь</a></li>
+                    </ul> 
+                </nav>  
+            </header>
+
+            <div class="cover">
+                <h1>HouseKeeper</h1>
+            </div>
+
+            <div class="undercover">
+                Система организации и автоматизации работы арендодателя
+            </div>
+
+            <input class="dow0" type='submit' value='Регистрация'>  
+       </div>
+
+        <a name="about"></a>
+        <section class="order-section">
+            
+            <div class="zag">Почему мы - ваш выбор</div>
+            <div class="card-container">
+
+                <div class="card">
+                    <div class="card img">
+                        <img src="images\1.png" alt="">
+                    </div>
+                
+                    <div class="card-desc">Календарь бронирования</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card img">
+                        <img src="images\2.png" alt="">
+                    </div>
+
+                    <div class="card-desc" >Автоматизация</div>
+                </div>
+
+                <div class="card">
+                    <div class="card img">
+                        <img src="images\3.png" alt="">
+                    </div>
+
+                    <div class="card-desc">Подключение сотрудников</div>
+                </div>
+
+                <div class="card">
+                    <div class="card img">
+                        <img src="images\4.png" alt="">
+                    </div>
+
+                    <div class="card-desc">Подробная статистика</div>
+                </div>
+            </div>        
+        </section>
+
+        <div class="img1">
+            <div class="rectext">Тысячи отзывов довольных клиентов</div>
+
+            <div class="underRec"></div>
+
+            <div class="rec">
+                <div class="sl_ctr">
+                    <div class="sldr">  
+                    <img src="images/pers1.png" alt="">
+                    <img src="images/pers2.png" alt="">
+                    <img src="images/pers3.png" alt="">
+                    </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="line2"></div>
+
+        <a name="tar"></a>
+        <div class="tarifi">  
+            <div class="zag">Тарифы</div>
+
+            <div class="shari">
+                <div class="shar">
+                    <h3>Эконом</h3>
+                    <div class="h40">Базовые функции<br>для начинающих арендодателей</div>
+                </div> 
+                <div class="shar">
+                    <h3>Стандарт</h3>
+                    <div class="h40">Все необходимое для удобной работы<br>с клиентами</div>
+                </div>
+                <div class="shar">
+                    <h3>Премиум</h3>
+                    <div class="h41">Расширенные возможности и максимальный комфорт</div>
+                </div> 
+            </div>
+        </div>
+
+        <div class="line1"></div>
+
+        <div class="download">
+            <div class="downloadbox">
+                <input class="dow" type='submit' value='Регистрация'> 
+            </div>
+            
+        </div>
+
+        <a name="feed"></a>
+        <div class="feedback">
+            <div class="panel">
+                <div class="dow1">Социальные сети</div>
+                <div class="circ-container">
+                    <div class="circ1">
+                    </div>
+                    <div class="circ2">
+                    </div>
+                    <div class="circ3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedtext">
+                <p>Обратная связь</p>
+         
+                <input class="inp1" maxlength="200" size="80" placeholder="Ваше имя"><br> 
+
+                <input class="inp2" maxlength="200" size="80" placeholder="Сообщение"><br>
+
+                <input class="bot-send-mail" type='submit' value='Отправить'>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
